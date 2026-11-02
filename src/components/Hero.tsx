@@ -33,7 +33,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08]"
         >
-          Architecting <span className="gradient-accent">fault-tolerant</span> systems & modern web experiences.
+          Building modern <span className="gradient-accent">Full-Stack & AI</span> platforms with precision.
         </motion.h1>
 
         <motion.p
@@ -59,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
           onClick={() => sound.playClick()}
           className="px-6 py-3.5 rounded-2xl bg-white text-obsidian-950 font-bold text-sm tracking-wide font-sans hover:bg-slate-200 transition-all duration-300 shadow-glow-cyan flex items-center gap-2 group"
         >
-          <span>Explore Architectures</span>
+          <span>Explore Projects</span>
           <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
         </a>
 

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Check, Copy, Send, Github, Linkedin, Twitter, Sparkles, MessageSquare } from 'lucide-react';
+import { Check, Copy, Send, Github, Linkedin, Twitter, Sparkles, MessageSquare, Phone } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { portfolioData } from '../data/portfolioData';
 import { sound } from '../utils/sound';
 
 export const ContactSection: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const [phoneCopied, setPhoneCopied] = useState(false);
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -23,6 +24,21 @@ export const ContactSection: React.FC = () => {
     });
 
     setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(portfolioData.phone);
+    sound.playSuccess();
+    setPhoneCopied(true);
+
+    confetti({
+      particleCount: 40,
+      spread: 60,
+      origin: { y: 0.8 },
+      colors: ['#10B981', '#00F0FF', '#FFFFFF'],
+    });
+
+    setTimeout(() => setPhoneCopied(false), 2500);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -81,6 +97,34 @@ export const ContactSection: React.FC = () => {
                 title="Copy to clipboard"
               >
                 {copied ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="text-emerald-400 font-bold">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+
+          {/* Direct Phone Card */}
+          <div className="glass-panel p-5 rounded-2xl border border-white/10 space-y-3">
+            <span className="text-xs font-mono text-slate-400">Phone & WhatsApp:</span>
+            <div className="flex items-center justify-between gap-3 bg-white/[0.03] p-3 rounded-xl border border-white/5">
+              <span className="font-mono text-xs sm:text-sm text-slate-200 flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                {portfolioData.phone}
+              </span>
+              <button
+                onClick={handleCopyPhone}
+                className="px-3 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-400 text-xs font-mono flex items-center gap-1.5 transition-all shrink-0"
+                title="Copy phone"
+              >
+                {phoneCopied ? (
                   <>
                     <Check className="w-3.5 h-3.5 text-emerald-400" />
                     <span className="text-emerald-400 font-bold">Copied!</span>

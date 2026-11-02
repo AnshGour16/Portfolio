@@ -84,15 +84,14 @@ export const TerminalModal: React.FC<TerminalModalProps> = ({ isOpen, onClose })
             </pre>
             <div className="space-y-1 text-slate-300">
               <div className="text-cyber-violet font-bold pb-1 border-b border-white/10">
-                {portfolioData.name.toLowerCase()}@arch-linux-kernel
+                ansh@chitkara-workstation
               </div>
-              <div><span className="text-cyber-cyan">OS:</span> Cloud-Native Linux x86_64</div>
-              <div><span className="text-cyber-cyan">Host:</span> High Concurrency Microservices</div>
-              <div><span className="text-cyber-cyan">Uptime:</span> 99.98% SLA Guaranteed</div>
-              <div><span className="text-cyber-cyan">Packages:</span> 140+ Go / React / TS Modules</div>
-              <div><span className="text-cyber-cyan">Shell:</span> Zsh 5.9 (x86_64-darwin)</div>
-              <div><span className="text-cyber-cyan">Theme:</span> Obsidian Obsidian Minimalist</div>
-              <div><span className="text-cyber-cyan">Memory:</span> 140MB P99 Active Heap</div>
+              <div><span className="text-cyber-cyan">Education:</span> B.E. Computer Science (CGPA: 7.7)</div>
+              <div><span className="text-cyber-cyan">LeetCode:</span> 225+ Problems Solved</div>
+              <div><span className="text-cyber-cyan">Experience:</span> Full Stack Intern @ ESSMEY Pvt Ltd</div>
+              <div><span className="text-cyber-cyan">Stack:</span> MERN • Next.js • Gemini API • C++</div>
+              <div><span className="text-cyber-cyan">Shell:</span> Zsh 5.9 (x86_64-linux-gnu)</div>
+              <div><span className="text-cyber-cyan">Leadership:</span> IEEE Student Chapter Executive</div>
             </div>
           </div>
         );
@@ -140,8 +139,9 @@ export const TerminalModal: React.FC<TerminalModalProps> = ({ isOpen, onClose })
       case 'contact':
         output = (
           <div className="space-y-1 font-mono text-xs">
-            <p className="text-cyber-cyan font-bold">Direct Channels:</p>
+            <p className="text-cyber-cyan font-bold">Direct Communication Channels:</p>
             <div>Email: <a href={`mailto:${portfolioData.email}`} className="text-yellow-400 underline">{portfolioData.email}</a></div>
+            <div>Phone: <span className="text-emerald-400">{portfolioData.phone}</span></div>
             <div>GitHub: <a href={portfolioData.github} target="_blank" rel="noreferrer" className="text-cyan-400 underline">{portfolioData.github}</a></div>
             <div>LinkedIn: <a href={portfolioData.linkedin} target="_blank" rel="noreferrer" className="text-cyan-400 underline">{portfolioData.linkedin}</a></div>
           </div>
@@ -324,3 +324,4 @@ export const TerminalModal: React.FC<TerminalModalProps> = ({ isOpen, onClose })
     </AnimatePresence>
   );
 };
+

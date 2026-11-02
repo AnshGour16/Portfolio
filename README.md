@@ -69,3 +69,4 @@ You can deploy this portfolio in seconds with zero configuration to:
 - **Vercel**: Import the GitHub repository and click Deploy.
 - **Netlify**: Run `npm run build` with publish directory `dist`.
 - **GitHub Pages**: Build with Vite and push to the `gh-pages` branch.
+

@@ -151,3 +151,4 @@ export const BackgroundCanvas: React.FC = () => {
     </div>
   );
 };
+

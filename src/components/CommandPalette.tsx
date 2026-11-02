@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Terminal, Volume2, VolumeX, Mail, Github, Linkedin, FileText, ArrowRight } from 'lucide-react';
+import { Search, Terminal, Volume2, VolumeX, Mail, Github, Linkedin, FileText, ArrowRight, Phone } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { portfolioData } from '../data/portfolioData';
 import { sound } from '../utils/sound';
@@ -96,6 +96,22 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       icon: <Mail className="w-4 h-4 text-cyber-cyan" />,
       perform: () => {
         navigator.clipboard.writeText(portfolioData.email);
+        sound.playSuccess();
+        confetti({
+          particleCount: 40,
+          spread: 60,
+          origin: { y: 0.7 },
+        });
+        onClose();
+      },
+    },
+    {
+      id: 'copy-phone',
+      title: `Copy Phone (${portfolioData.phone})`,
+      category: 'Quick Actions',
+      icon: <Phone className="w-4 h-4 text-emerald-400" />,
+      perform: () => {
+        navigator.clipboard.writeText(portfolioData.phone);
         sound.playSuccess();
         confetti({
           particleCount: 40,
@@ -223,11 +239,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                     action.perform();
                   }}
                   onMouseEnter={() => setSelectedIndex(idx)}
-                  className={`flex items-center justify-between p-3 rounded-xl cursor-pointer text-sm font-sans transition-all ${
-                    selectedIndex === idx
+                  className={`flex items-center justify-between p-3 rounded-xl cursor-pointer text-sm font-sans transition-all ${selectedIndex === idx
                       ? 'bg-cyber-cyan/15 text-white border border-cyber-cyan/30'
                       : 'text-slate-300 hover:bg-white/5 border border-transparent'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-1.5 rounded-lg bg-white/5 border border-white/5">

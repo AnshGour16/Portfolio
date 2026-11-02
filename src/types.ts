@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   tagline: string;
-  category: 'Full-Stack' | 'Distributed Systems' | 'Cloud & DevOps' | 'AI & APIs';
+  category: 'Full-Stack' | 'AI & Full-Stack' | 'MERN Stack' | 'Cloud & DevOps';
   description: string;
   architectureDetails: string[];
   metrics: { label: string; value: string }[];
@@ -35,6 +35,21 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  grade: string;
+  details?: string;
+}
+
+export interface ResponsibilityItem {
+  role: string;
+  organization: string;
+  period: string;
+  description: string;
+}
+
 export interface StatItem {
   label: string;
   value: string;
@@ -50,6 +65,7 @@ export interface PortfolioData {
   location: string;
   status: string;
   email: string;
+  phone: string;
   github: string;
   linkedin: string;
   twitter?: string;
@@ -62,4 +78,7 @@ export interface PortfolioData {
   projects: Project[];
   skills: SkillCategory[];
   experience: Experience[];
+  education: EducationItem[];
+  responsibilities: ResponsibilityItem[];
+  achievements: string[];
 }

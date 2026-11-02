@@ -165,3 +165,4 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
     </div>
   );
 };
+

@@ -1,220 +1,207 @@
 import { PortfolioData } from '../types';
 
 export const portfolioData: PortfolioData = {
-  name: "Ansh Goyal",
-  handle: "@anshgoyal",
-  title: "Full-Stack Engineer & Systems Architect",
-  headline: "Crafting High-Performance Systems & Elegant Interactive Experiences",
-  subheadline: "Specializing in distributed web architectures, reactive real-time interfaces, and cloud-native backends with high design fidelity and sub-second latency.",
-  location: "New Delhi, India / Remote",
-  status: "Available for ambitious opportunities",
-  email: "anshgoyal.dev@gmail.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
+  name: "Ansh Gour",
+  handle: "@AnshGour16",
+  title: "Full-Stack Developer & Software Engineer",
+  headline: "Building Modern Full-Stack Platforms with AI Capabilities & Scalable Architecture",
+  subheadline: "Computer Science Engineer specializing in MERN stack, Next.js, and Google Gemini AI integrations. Experienced in production development at ESSMEY and solved 225+ LeetCode problems.",
+  location: "Patiala, Punjab, India",
+  status: "Open to Software Engineering & Full-Stack Roles",
+  email: "anshgour759@gmail.com",
+  phone: "(+91) 8847608556",
+  github: "https://github.com/AnshGour16",
+  linkedin: "https://linkedin.com/in/anshgour",
   resumeUrl: "#resume",
   stats: [
-    { label: "Production Scale", value: "10M+", subtext: "API Requests / Day" },
-    { label: "Systems Uptime", value: "99.98%", subtext: "Global SLA Metric" },
-    { label: "Core Web Vitals", value: "100", subtext: "Performance Score" },
-    { label: "Open Source", value: "40+", subtext: "Repos & Contributions" },
+    { label: "LeetCode Solved", value: "225+", subtext: "DSA & Problem Solving" },
+    { label: "Academic CGPA", value: "7.7", subtext: "B.E. Computer Science" },
+    { label: "Production Experience", value: "Intern", subtext: "ESSMEY Private Limited" },
+    { label: "Campus Leadership", value: "IEEE", subtext: "Executive Chapter Member" },
   ],
   about: {
     paragraphs: [
-      "I am a software engineer obsessed with the intersection of distributed systems architecture and delightful, pixel-perfect user interaction. I don't just build software that works—I engineer scalable digital products that feel instantaneous, look striking, and stand resilient under immense load.",
-      "Over the past 5+ years, I have architected high-throughput microservices, designed multi-region databases, and crafted cutting-edge web applications using React, TypeScript, Node.js, Go, and Kubernetes.",
-      "When I am not profiling render cycles or tuning Redis cache invalidations, you will find me contributing to open-source developer tooling, exploring modern generative AI runtimes, or tinkering with WebGL shaders."
+      "I am a Computer Science Engineering student at Chitkara University with hands-on experience in full-stack web and mobile application development. My passion lies in building functional, high-performance digital products and integrating artificial intelligence to solve practical engineering challenges.",
+      "During my Full Stack Software Development internship at ESSMEY Private Limited, I developed and refined features across web and mobile platforms using React Native, REST APIs, and database services. I contributed directly to production-oriented modules, third-party integrations, and testing pipelines.",
+      "With 225+ LeetCode problems solved across Data Structures & Algorithms, I maintain a strong foundation in Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks. Beyond development, I serve as an Executive Member of the IEEE Student Chapter and Class Representative."
     ],
     coreValues: [
       {
-        title: "Latency Obsessed",
-        desc: "Every millisecond counts. From database query execution plans to 60 FPS UI transitions, speed is a foundational feature.",
+        title: "Strong CS Fundamentals",
+        desc: "225+ LeetCode problems solved in C++ and Java with deep grasp of Trees, Graphs, DP, DBMS, and OS fundamentals.",
         icon: "Zap"
       },
       {
-        title: "Fault-Tolerant Architecture",
-        desc: "Designing resilient distributed systems with circuit breakers, idempotent APIs, and graceful degradation.",
+        title: "Full-Stack & AI Integration",
+        desc: "End-to-end expertise in MERN stack and Next.js, leveraging Google Gemini API for intelligent, automated data processing.",
         icon: "ShieldCheck"
       },
       {
-        title: "Craft & Detail",
-        desc: "Bridge the gap between deep systems engineering and Apple-grade UI fidelity, micro-interactions, and accessibility.",
+        title: "Collaborative Leadership",
+        desc: "Active Executive Member in IEEE Student Chapter and Class Representative bridging faculty and students.",
         icon: "Sparkles"
       }
     ]
   },
   projects: [
     {
-      id: "hyper-cache-engine",
-      title: "PulseFlow: Real-Time Stream Engine",
-      tagline: "Ultra-low latency event streaming & live analytics pipeline",
-      category: "Distributed Systems",
-      description: "An event-driven distributed streaming system capable of ingesting, deduplicating, and aggregating over 120,000 events/sec with sub-10ms delivery to subscribed client dashboards.",
+      id: "ai-hackathon-ats",
+      title: "AI-Powered Hackathon Applicant Tracking System",
+      tagline: "Intelligent evaluation engine analyzing pitch decks and codebases with Google Gemini AI",
+      category: "AI & Full-Stack",
+      description: "An AI-powered judging platform using Next.js and Google Gemini AI to evaluate pitch decks and GitHub repositories against customizable hackathon criteria with automated scorecard generation.",
       architectureDetails: [
-        "Distributed Go-based ingestion workers with Raft consensus clustering",
-        "Redis cluster pub/sub paired with RocksDB local key-value state caching",
-        "Zero-copy serialization with Protocol Buffers and gRPC bidirectional streaming",
-        "WebSocket connection multiplexer handling 45,000+ concurrent clients with zero frame drops"
+        "Integrated Google Gemini AI for deep contextual analysis of pitch decks against customized hackathon rubrics",
+        "PDF processing pipeline using pdf2json and jsPDF to extract submission text and export downloadable standardized scorecards",
+        "GitHub API integration analyzing repository commit history, code structure, strengths, and missing project sections",
+        "Protected admin and participant dashboards featuring blind judging, real-time leaderboards, phase-based code unlocking, and CSV exports"
       ],
       metrics: [
-        { label: "Throughput", value: "120k evt/s" },
-        { label: "P99 Latency", value: "6.8ms" },
-        { label: "Memory Footprint", value: "< 140MB" }
+        { label: "AI Engine", value: "Gemini API" },
+        { label: "Evaluation", value: "Automated" },
+        { label: "Reports", value: "jsPDF / CSV" }
       ],
-      technologies: ["Go", "TypeScript", "Redis", "gRPC", "Docker", "Prometheus", "React"],
+      technologies: ["Next.js", "Google Gemini API", "GitHub API", "pdf2json", "jsPDF", "Tailwind CSS", "Vercel"],
       featured: true,
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com"
+      githubUrl: "https://github.com/AnshGour16",
+      liveUrl: "https://github.com/AnshGour16"
     },
     {
-      id: "aurora-studio-ai",
-      title: "Nexus AI: Intelligent Knowledge Mesh",
-      tagline: "Enterprise semantic search & multi-agent synthesis platform",
-      category: "AI & APIs",
-      description: "A generative AI knowledge engine that transforms terabytes of unstructured enterprise documentation into real-time vectorized retrieval graphs with citation verification.",
+      id: "nexus-contacts",
+      title: "Nexus Contacts: Contact Management Platform",
+      tagline: "Full-stack MERN platform with JWT authentication and glassmorphism interface",
+      category: "MERN Stack",
+      description: "A production-ready contact management platform with secure JWT authentication, bcrypt password hashing, isolated user data schemas, and real-time search functionality.",
       architectureDetails: [
-        "Hybrid search pipeline combining BM25 lexical search with Milvus dense vector embeddings",
-        "Autonomous multi-agent verification loop to eliminate hallucinations before streaming",
-        "React frontend with token-level optimistic rendering and interactive AST code blocks",
-        "Edge-cached responses with Cloudflare Workers reducing average latency by 72%"
+        "Robust Node.js and Express backend implementing RESTful APIs with route guards and JWT authentication tokens",
+        "Bcrypt password hashing and user-specific data isolation ensuring strict multi-tenant privacy",
+        "Complete CRUD operations with real-time client-side search, front-end and backend validation, and password strength enforcement",
+        "Responsive glassmorphism UI built with React (Vite) and Tailwind CSS, deployed on Vercel with backend on Render"
       ],
       metrics: [
-        { label: "Accuracy", value: "98.4%" },
-        { label: "Query Time", value: "240ms" },
-        { label: "Docs Indexed", value: "2.5M+" }
+        { label: "Security", value: "JWT + Bcrypt" },
+        { label: "Database", value: "MongoDB" },
+        { label: "Deployment", value: "Vercel & Render" }
       ],
-      technologies: ["Next.js", "Python", "FastAPI", "Milvus", "PostgreSQL", "TailwindCSS"],
+      technologies: ["React (Vite)", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "bcryptjs", "Tailwind CSS", "Render", "Vercel"],
       featured: true,
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com"
-    },
-    {
-      id: "cloud-forge-infra",
-      title: "CloudForge: Ephemeral Preview Environments",
-      tagline: "Automated container orchestration on Git pull requests",
-      category: "Cloud & DevOps",
-      description: "A DevOps automation orchestrator that provisions isolated, full-stack Kubernetes preview environments per pull request in under 45 seconds with automatic teardown.",
-      architectureDetails: [
-        "Custom Kubernetes CRD controller written in Go reconciling pull request states",
-        "Dynamic TLS certificate generation & route provisioning via Traefik Ingress",
-        "Database branch cloning with sanitized ephemeral snapshots via AWS RDS",
-        "Unified CLI tool and GitHub Actions bot commenting live preview links"
-      ],
-      metrics: [
-        { label: "Spin-up Time", value: "38s" },
-        { label: "Cloud Cost Saved", value: "42%" },
-        { label: "Environments/Mo", value: "1,200+" }
-      ],
-      technologies: ["Kubernetes", "Go", "AWS", "Docker", "Terraform", "GitHub Actions"],
-      featured: true,
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com"
-    },
-    {
-      id: "zenith-commerce",
-      title: "Zenith: Headless Ultra-Fast E-Commerce",
-      tagline: "Sub-50ms TTFB headless commerce with edge rendering",
-      category: "Full-Stack",
-      description: "A modular, blazing fast e-commerce platform built for extreme peak traffic bursts during high-volume product drops with zero inventory desynchronization.",
-      architectureDetails: [
-        "Optimistic UI updates with instant local cart state and background reconciliations",
-        "Distributed distributed locks using Redlock algorithm preventing overselling",
-        "Stripe integration with automated webhooks and asynchronous ledger accounting",
-        "100/100 Google Lighthouse Core Web Vitals across all mobile viewpoints"
-      ],
-      metrics: [
-        { label: "Lighthouse", value: "100/100" },
-        { label: "Checkout Conversion", value: "+34%" },
-        { label: "Peak QPS", value: "8,500" }
-      ],
-      technologies: ["React", "TypeScript", "Node.js", "GraphQL", "PostgreSQL", "Stripe", "TailwindCSS"],
-      featured: true,
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com"
+      githubUrl: "https://github.com/AnshGour16",
+      liveUrl: "https://github.com/AnshGour16"
     }
   ],
   skills: [
     {
-      name: "Frontend & Interfaces",
-      description: "Crafting fluid, accessible, and high-performance user interfaces.",
+      name: "Frontend & Mobile",
+      description: "Building responsive, modern, and accessible client interfaces.",
       skills: [
-        { name: "React / Next.js", level: 96, highlight: "Server Components, App Router, Hooks" },
-        { name: "TypeScript", level: 94, highlight: "Strict typing, Generics, AST manipulation" },
-        { name: "Tailwind CSS", level: 95, highlight: "Custom design systems & responsive layouts" },
-        { name: "Framer Motion", level: 90, highlight: "60fps micro-interactions & physics" },
-        { name: "State & Data Fetching", level: 92, highlight: "Zustand, TanStack Query, Redux" }
+        { name: "React (Vite)", level: 92, highlight: "Hooks, State Management, SPAs" },
+        { name: "Next.js", level: 88, highlight: "App Router, SSR, Server Components" },
+        { name: "Tailwind CSS", level: 94, highlight: "Glassmorphism, Responsive Design" },
+        { name: "React Native", level: 82, highlight: "Cross-platform Mobile Development" },
+        { name: "HTML5 & CSS3", level: 95, highlight: "Semantic markup & modern layouts" }
       ]
     },
     {
-      name: "Backend & Systems",
-      description: "Building resilient microservices, robust APIs, and high-throughput pipelines.",
+      name: "Backend & APIs",
+      description: "Engineering RESTful APIs, authentication workflows, and microservices.",
       skills: [
-        { name: "Node.js & Express", level: 95, highlight: "Event loop optimization, streaming" },
-        { name: "Go (Golang)", level: 86, highlight: "Concurrency, Goroutines, gRPC services" },
-        { name: "Python & FastAPI", level: 88, highlight: "Async runtimes, AI pipelines, data manipulation" },
-        { name: "REST & GraphQL", level: 92, highlight: "Schema federation, caching, idempotent design" },
-        { name: "WebSockets & SSE", level: 90, highlight: "Bidirectional real-time state synchronization" }
+        { name: "Node.js", level: 90, highlight: "Asynchronous runtime & Event Loop" },
+        { name: "Express.js", level: 92, highlight: "REST APIs, Middleware, Route Protection" },
+        { name: "Authentication (JWT & Bcrypt)", level: 92, highlight: "Secure tokens, password hashing" },
+        { name: "Axios & REST APIs", level: 94, highlight: "API integration & error handling" }
       ]
     },
     {
-      name: "Databases & Storage",
-      description: "Designing high-scale relational, document, and in-memory data layers.",
+      name: "Programming & CS Fundamentals",
+      description: "Solid algorithmic problem-solving and software foundations.",
       skills: [
-        { name: "PostgreSQL", level: 92, highlight: "Indexing strategies, partitioning, complex queries" },
-        { name: "Redis", level: 94, highlight: "Distributed caching, pub/sub, rate-limiting" },
-        { name: "MongoDB", level: 88, highlight: "Aggregation pipelines, replica sets" },
-        { name: "Vector DBs (Milvus / Pinecone)", level: 85, highlight: "Embedding indexing, semantic search" }
+        { name: "Data Structures & Algorithms", level: 90, highlight: "225+ LeetCode problems solved" },
+        { name: "C++", level: 88, highlight: "STL, Algorithms, Memory Management" },
+        { name: "Java", level: 85, highlight: "Object-Oriented Programming (OOP)" },
+        { name: "JavaScript", level: 92, highlight: "ES6+, Promises, Async/Await" },
+        { name: "DBMS, OS & CN", level: 86, highlight: "Operating Systems & Networking" }
       ]
     },
     {
-      name: "DevOps & Cloud Infrastructure",
-      description: "Automating zero-downtime deployment pipelines and container clusters.",
+      name: "Databases, AI & Cloud Tools",
+      description: "Database modeling, AI SDKs, and deployment platforms.",
       skills: [
-        { name: "Docker & Containers", level: 92, highlight: "Multi-stage builds, minimal images" },
-        { name: "Kubernetes", level: 84, highlight: "Deployments, Services, Helm charts" },
-        { name: "AWS Cloud Services", level: 88, highlight: "ECS, S3, RDS, Lambda, CloudFront" },
-        { name: "CI/CD & GitHub Actions", level: 90, highlight: "Automated testing, linting, releases" }
+        { name: "MongoDB & Mongoose", level: 90, highlight: "Schema design, CRUD, Aggregations" },
+        { name: "SQL", level: 84, highlight: "Relational queries, Joins, Indexing" },
+        { name: "Google Gemini API", level: 88, highlight: "LLM integration, Prompting, Analysis" },
+        { name: "PDF Processing (pdf2json, jsPDF)", level: 86, highlight: "Document parsing & generation" },
+        { name: "Git, GitHub & Linux", level: 90, highlight: "Version control & CLI environments" },
+        { name: "Vercel & Render", level: 92, highlight: "Cloud deployment & environment configs" }
       ]
     }
   ],
   experience: [
     {
-      company: "Apex Distributed Labs",
-      role: "Lead Full-Stack Systems Engineer",
-      period: "2023 - Present",
-      location: "Remote",
-      description: "Spearheaded core platform engineering, scaling mission-critical microservices and revamping the developer-facing interactive command suite.",
+      company: "ESSMEY PRIVATE LIMITED",
+      role: "Full Stack Software Development Intern",
+      period: "Jun 2024 - Sep 2024",
+      location: "India",
+      description: "Contributed to production-level application features across web and mobile platforms with frontend and backend services.",
       highlights: [
-        "Architected an event stream ingestion engine handling 10M+ events/day with 99.99% uptime",
-        "Reduced frontend bundle size by 46% and achieved sub-80ms First Contentful Paint globally",
-        "Mentored a team of 6 engineers on TypeScript best practices, design patterns, and observability"
+        "Developed and improved application features across web and mobile platforms using React Native, REST APIs, backend services, and database integrations",
+        "Integrated third-party services and contributed to production-oriented application features across frontend and backend components",
+        "Performed software testing, debugging, technical documentation, and supported deployment-related activities"
       ],
-      technologies: ["React", "TypeScript", "Node.js", "Go", "PostgreSQL", "Redis", "Docker"]
+      technologies: ["React Native", "JavaScript", "REST APIs", "Node.js", "MongoDB", "Git"]
     },
     {
-      company: "Vanguard Tech Systems",
-      role: "Senior Software Engineer",
-      period: "2021 - 2023",
-      location: "Bengaluru, India",
-      description: "Designed and implemented real-time collaboration tools, high-concurrency payment flows, and micro-frontend integrations.",
+      company: "Technical Development & Projects",
+      role: "Software Developer & Open Source",
+      period: "2024 - Present",
+      location: "Patiala, India",
+      description: "Focused on advanced algorithmic problem solving, MERN stack web applications, and AI integrations.",
       highlights: [
-        "Engineered real-time canvas sync engine using WebSockets and CRDTs with conflict-free resolution",
-        "Implemented distributed rate-limiting middleware in Redis protecting endpoints from abuse",
-        "Refactored legacy monolith into modular microservices with zero downtime during cutover"
+        "Solved 225+ LeetCode problems focused on data structures, algorithms, and computational problem-solving",
+        "Built and deployed full-stack web applications using the MERN stack with authentication, REST APIs, databases, and responsive interfaces",
+        "Integrated Google Gemini AI into web applications for automated document evaluation and intelligent data processing"
       ],
-      technologies: ["React", "Node.js", "GraphQL", "AWS", "Kafka", "MongoDB"]
-    },
-    {
-      company: "Novus Digital Innovations",
-      role: "Full-Stack Developer",
-      period: "2019 - 2021",
-      location: "New Delhi, India",
-      description: "Built responsive client portals, RESTful API layers, and automated data processing jobs.",
-      highlights: [
-        "Developed 12+ enterprise web applications with custom design systems and robust testing suites",
-        "Cut database query latencies by 60% through indexed query optimizations and query caching"
-      ],
-      technologies: ["JavaScript", "React", "Express", "PostgreSQL", "Docker"]
+      technologies: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Gemini API", "C++"]
     }
+  ],
+  education: [
+    {
+      degree: "B.E. Computer Science",
+      institution: "Chitkara University, Punjab",
+      period: "2022 - Present",
+      grade: "CGPA: 7.7",
+      details: "Focusing on Data Structures & Algorithms, Database Systems, Web Technologies, and Software Engineering."
+    },
+    {
+      degree: "Class XII (CBSE)",
+      institution: "Sri Guru Tegh Bahadur Public School, Patiala",
+      period: "2022",
+      grade: "75.2%",
+      details: "Senior secondary education with focus on Science and Mathematics."
+    }
+  ],
+  responsibilities: [
+    {
+      role: "Executive Member",
+      organization: "IEEE Student Chapter, Chitkara University",
+      period: "2024 - Present",
+      description: "Contribute to organizing technical events, workshops, and hackathons to promote student innovation."
+    },
+    {
+      role: "Core Member",
+      organization: "CSE Sports Club, Chitkara University",
+      period: "2024 - Present",
+      description: "Assist in organizing sports events and inter-department competitions while promoting teamwork."
+    },
+    {
+      role: "Class Representative (CR)",
+      organization: "Chitkara University",
+      period: "2024 - Present",
+      description: "Act as a communication bridge between faculty and students for academic updates and student coordination."
+    }
+  ],
+  achievements: [
+    "Solved 225+ LeetCode problems focused on Data Structures, Algorithms, and Problem-Solving.",
+    "Represented district-level cricket team and participated in university tournaments.",
+    "Awarded 'Man of the Match' in first competitive university cricket tournament."
   ]
 };
