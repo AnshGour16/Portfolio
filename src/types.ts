@@ -59,6 +59,7 @@ export interface StatItem {
 export interface PortfolioData {
   name: string;
   handle: string;
+  photoUrl?: string;
   title: string;
   headline: string;
   subheadline: string;

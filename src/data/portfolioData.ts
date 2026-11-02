@@ -3,6 +3,7 @@ import { PortfolioData } from '../types';
 export const portfolioData: PortfolioData = {
   name: "Ansh Gour",
   handle: "@AnshGour16",
+  photoUrl: "/ansh-photo.jpg",
   title: "Full-Stack Developer & Software Engineer",
   headline: "Building Modern Full-Stack Platforms with AI Capabilities & Scalable Architecture",
   subheadline: "Computer Science Engineer specializing in MERN stack, Next.js, and Google Gemini AI integrations. Experienced in production development at ESSMEY and solved 225+ LeetCode problems.",
