@@ -10,7 +10,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
   return (
-    <section className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col justify-center relative z-10">
+    <section className="pt-36 sm:pt-44 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col relative z-10">
       {/* Availability Status Badge */}
       <motion.div
         initial={{ opacity: 0, y: -15 }}

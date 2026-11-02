@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   tagline: string;
-  category: 'Full-Stack' | 'AI & Full-Stack' | 'MERN Stack' | 'Cloud & DevOps';
+  category: 'Full-Stack' | 'AI & Full-Stack' | 'Distributed Systems' | 'MERN Stack' | 'Cloud & DevOps';
   description: string;
   architectureDetails: string[];
   metrics: { label: string; value: string }[];
@@ -19,7 +19,7 @@ export interface SkillCategory {
   description: string;
   skills: {
     name: string;
-    level: number; // 0 - 100
+    level?: number;
     icon?: string;
     highlight?: string;
   }[];

@@ -45,48 +45,70 @@ export const portfolioData: PortfolioData = {
   },
   projects: [
     {
-      id: "ai-hackathon-ats",
-      title: "AI-Powered Hackathon Applicant Tracking System",
-      tagline: "Intelligent evaluation engine analyzing pitch decks and codebases with Google Gemini AI",
-      category: "AI & Full-Stack",
-      description: "An AI-powered judging platform using Next.js and Google Gemini AI to evaluate pitch decks and GitHub repositories against customizable hackathon criteria with automated scorecard generation.",
+      id: "authentication-system",
+      title: "Full-Stack Authentication & OTP Reset System",
+      tagline: "Secure production-grade auth engine with 3-step OTP recovery, rate-limiting & 38 TDD tests",
+      category: "Full-Stack",
+      description: "A secure full-stack authentication system built with Node.js, Express, MongoDB Atlas (Mongoose), JWT, and Bcrypt. Features a 3-step OTP-based password reset via direct SSL SMTP, Helmet HTTP security hardening, multi-tier rate limiting, and an automated 38-test TDD suite.",
       architectureDetails: [
-        "Integrated Google Gemini AI for deep contextual analysis of pitch decks against customized hackathon rubrics",
-        "PDF processing pipeline using pdf2json and jsPDF to extract submission text and export downloadable standardized scorecards",
-        "GitHub API integration analyzing repository commit history, code structure, strengths, and missing project sections",
-        "Protected admin and participant dashboards featuring blind judging, real-time leaderboards, phase-based code unlocking, and CSV exports"
+        "JWT stateless session management with salted bcrypt password hashing and 24-hour expiration",
+        "Instant OTP recovery flow via direct SSL (smtp.gmail.com:465) with 10-minute TTL and 5-attempt brute-force lockout",
+        "Security hardening with Helmet CSP headers, NoSQL operator injection defenses, and multi-tier express-rate-limit",
+        "Comprehensive 38-test automated unit and integration suite using Jest and Supertest across 5 test suites"
       ],
       metrics: [
-        { label: "AI Engine", value: "Gemini API" },
-        { label: "Evaluation", value: "Automated" },
-        { label: "Reports", value: "jsPDF / CSV" }
+        { label: "Test Suite", value: "38 TDD Tests" },
+        { label: "OTP Defense", value: "Brute-Force Lock" },
+        { label: "Security", value: "Helmet + RateLimit" }
       ],
-      technologies: ["Next.js", "Google Gemini API", "GitHub API", "pdf2json", "jsPDF", "Tailwind CSS", "Vercel"],
+      technologies: ["Node.js", "Express.js", "MongoDB Atlas", "JWT", "Bcrypt", "Jest", "Supertest", "Tailwind CSS"],
       featured: true,
-      githubUrl: "https://github.com/AnshGour16",
-      liveUrl: "https://github.com/AnshGour16"
+      githubUrl: "https://github.com/AnshGour16/Authentication-System",
+      liveUrl: "https://github.com/AnshGour16/Authentication-System"
     },
     {
-      id: "nexus-contacts",
-      title: "Nexus Contacts: Contact Management Platform",
-      tagline: "Full-stack MERN platform with JWT authentication and glassmorphism interface",
-      category: "MERN Stack",
-      description: "A production-ready contact management platform with secure JWT authentication, bcrypt password hashing, isolated user data schemas, and real-time search functionality.",
+      id: "hackathon-ats",
+      title: "Automated Hackathon Applicant Tracking System (ATS)",
+      tagline: "AI-powered evaluation engine analyzing pitch decks and codebases with Gemini 1.5 Pro",
+      category: "AI & Full-Stack",
+      description: "An intelligent hackathon judging platform built with Next.js 14 and Google Gemini 1.5 Pro to evaluate pitch decks and GitHub repositories in seconds with blind judging, plagiarism checks, and PDF report cards.",
       architectureDetails: [
-        "Robust Node.js and Express backend implementing RESTful APIs with route guards and JWT authentication tokens",
-        "Bcrypt password hashing and user-specific data isolation ensuring strict multi-tenant privacy",
-        "Complete CRUD operations with real-time client-side search, front-end and backend validation, and password strength enforcement",
-        "Responsive glassmorphism UI built with React (Vite) and Tailwind CSS, deployed on Vercel with backend on Render"
+        "Gemini 1.5 Pro contextual evaluation analyzing pitch decks against custom track rubrics and scoring technical complexity",
+        "GitHub Code Analyzer scraping README and package.json to grade repository depth and codebase structure",
+        "PDF extraction pipeline using pdf2json and jsPDF for automated text extraction and downloadable scorecards",
+        "Blind judging mode redacting PII to eliminate bias, featuring live leaderboards, CSV exports, and NextAuth.js"
       ],
       metrics: [
-        { label: "Security", value: "JWT + Bcrypt" },
-        { label: "Database", value: "MongoDB" },
-        { label: "Deployment", value: "Vercel & Render" }
+        { label: "AI Engine", value: "Gemini 1.5 Pro" },
+        { label: "Evaluation", value: "Automated Rubric" },
+        { label: "Scoring", value: "Blind Judging" }
       ],
-      technologies: ["React (Vite)", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "bcryptjs", "Tailwind CSS", "Render", "Vercel"],
+      technologies: ["Next.js 14", "Google Gemini AI", "MongoDB", "NextAuth.js", "GitHub API", "pdf2json", "jsPDF", "Tailwind CSS"],
       featured: true,
-      githubUrl: "https://github.com/AnshGour16",
-      liveUrl: "https://github.com/AnshGour16"
+      githubUrl: "https://github.com/AnshGour16/Hackathon-ATS",
+      liveUrl: "https://github.com/AnshGour16/Hackathon-ATS"
+    },
+    {
+      id: "api-sentinel",
+      title: "API Sentinel: Distributed Monitoring & Observability Platform",
+      tagline: "Full-stack API observability with BullMQ job queues, Redis locks & WebSockets",
+      category: "Distributed Systems",
+      description: "A full-stack API monitoring and observability platform engineered for mission-critical endpoint health probing, high-precision latency percentiles (P50, P90, P99), automated incident state machines, and real-time dashboard telemetry.",
+      architectureDetails: [
+        "Autonomous scheduled probing powered by a distributed Redis-locked scheduler dispatching jobs to BullMQ workers",
+        "Real-time bi-directional telemetry streaming to React 19 dashboards via WebSockets (Socket.IO user rooms)",
+        "Zero-Trust SSRF validator blocking private IP scans and sliding-window rate limiting in Redis",
+        "PostgreSQL 16+ multi-tenant data isolation with automated incident lifecycle transitions and 77 passing Vitest tests"
+      ],
+      metrics: [
+        { label: "Test Coverage", value: "77 Vitest Passing" },
+        { label: "Scheduler", value: "BullMQ + Redis" },
+        { label: "Real-time", value: "Socket.IO" }
+      ],
+      technologies: ["React 19", "TypeScript", "Node.js", "Express", "PostgreSQL", "Redis", "BullMQ", "Socket.IO", "Vite", "Tailwind CSS"],
+      featured: true,
+      githubUrl: "https://github.com/AnshGour16/api-sentinel",
+      liveUrl: "https://github.com/AnshGour16/api-sentinel"
     }
   ],
   skills: [
@@ -175,7 +197,7 @@ export const portfolioData: PortfolioData = {
       degree: "Class XII (CBSE)",
       institution: "Sri Guru Tegh Bahadur Public School, Patiala",
       period: "2022",
-      grade: "75.2%",
+      grade: "Senior Secondary",
       details: "Senior secondary education with focus on Science and Mathematics."
     }
   ],

@@ -11,7 +11,7 @@ export const ProjectsSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const categories = ['All', 'AI & Full-Stack', 'MERN Stack'];
+  const categories = ['All', 'Full-Stack', 'AI & Full-Stack', 'Distributed Systems'];
 
   const filteredProjects = activeCategory === 'All'
     ? portfolioData.projects

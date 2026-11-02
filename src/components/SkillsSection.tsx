@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Terminal, Shield, Zap } from 'lucide-react';
+import { Cpu, Terminal, Shield, Zap, Sparkles } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { sound } from '../utils/sound';
 
@@ -31,12 +31,12 @@ export const SkillsSection: React.FC = () => {
           Engineering <span className="gradient-accent">Competencies</span>
         </h2>
         <p className="text-slate-400 mt-3 text-sm sm:text-base">
-          Proven proficiency across the entire modern software lifecycle—from high-throughput microservices to sub-millisecond client interfaces.
+          Proven proficiency across modern web frameworks, distributed architectures, algorithms, and cloud services.
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
         {portfolioData.skills.map((category, idx) => (
           <button
             key={idx}
@@ -64,52 +64,44 @@ export const SkillsSection: React.FC = () => {
         transition={{ duration: 0.3 }}
         className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 max-w-4xl mx-auto"
       >
-        <div className="mb-6 pb-6 border-b border-white/10">
-          <h3 className="text-xl font-bold text-white flex items-center gap-2.5">
-            {getIcon(selectedTab)}
-            {portfolioData.skills[selectedTab].name}
-          </h3>
-          <p className="text-sm text-slate-400 mt-1">
-            {portfolioData.skills[selectedTab].description}
-          </p>
+        <div className="mb-6 pb-6 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h3 className="text-xl font-bold text-white flex items-center gap-2.5">
+              {getIcon(selectedTab)}
+              {portfolioData.skills[selectedTab].name}
+            </h3>
+            <p className="text-sm text-slate-400 mt-1">
+              {portfolioData.skills[selectedTab].description}
+            </p>
+          </div>
+          <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 self-start sm:self-auto flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-cyber-cyan" />
+            {portfolioData.skills[selectedTab].skills.length} Technologies
+          </span>
         </div>
 
-        <div className="space-y-6">
+        {/* Clean Tech Cards Grid - No Percentages */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           {portfolioData.skills[selectedTab].skills.map((skill, i) => (
-            <div key={i} className="group">
-              <div className="flex justify-between items-center mb-2">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-semibold text-slate-200 group-hover:text-cyber-cyan transition-colors">
-                    {skill.name}
-                  </span>
-                  {skill.highlight && (
-                    <span className="hidden sm:inline-block text-[11px] font-mono text-slate-400 bg-white/[0.04] px-2 py-0.5 rounded border border-white/5">
-                      {skill.highlight}
-                    </span>
-                  )}
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              className="p-4 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-cyber-cyan/40 hover:bg-white/[0.04] transition-all duration-300 group flex items-start justify-between gap-3"
+            >
+              <div className="space-y-1">
+                <div className="text-sm font-semibold text-white group-hover:text-cyber-cyan transition-colors flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyber-cyan group-hover:scale-125 transition-transform" />
+                  {skill.name}
                 </div>
-                <span className="text-xs font-mono font-bold text-cyber-cyan">
-                  {skill.level}%
-                </span>
+                {skill.highlight && (
+                  <p className="text-xs font-mono text-slate-400 pl-3.5">
+                    {skill.highlight}
+                  </p>
+                )}
               </div>
-
-              {/* Progress Track */}
-              <div className="h-2 w-full rounded-full bg-white/[0.05] overflow-hidden p-[1px] border border-white/5">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${skill.level}%` }}
-                  transition={{ duration: 0.8, delay: i * 0.08, ease: 'easeOut' }}
-                  className="h-full rounded-full bg-gradient-to-r from-cyber-cyan to-cyber-violet relative shadow-glow-cyan"
-                />
-              </div>
-
-              {/* Mobile highlight */}
-              {skill.highlight && (
-                <div className="sm:hidden text-[11px] font-mono text-slate-400 mt-1">
-                  {skill.highlight}
-                </div>
-              )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
