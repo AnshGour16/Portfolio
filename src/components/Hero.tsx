@@ -28,23 +28,29 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
             <span>{portfolioData.status}</span>
           </motion.div>
 
-          {/* Main Headline */}
-          <motion.h1
+          {/* Main Name & Role */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]"
+            className="mb-4"
           >
-            Engineering scalable <span className="gradient-accent">Full-Stack systems</span> & intelligent AI solutions.
-          </motion.h1>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-none">
+              {portfolioData.name}
+            </h1>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold gradient-accent mt-2 tracking-tight">
+              {portfolioData.title}
+            </div>
+          </motion.div>
 
+          {/* Up-to-the-point Statement */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-slate-300 mt-5 max-w-xl font-normal leading-relaxed"
+            className="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed"
           >
-            {portfolioData.subheadline}
+            {portfolioData.headline}
           </motion.p>
 
           {/* Action Buttons */}
