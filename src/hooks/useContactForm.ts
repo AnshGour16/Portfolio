@@ -1,5 +1,6 @@
 import { useState, useCallback, FormEvent, ChangeEvent } from 'react';
 import confetti from 'canvas-confetti';
+import { contactService } from '../services/contactService';
 
 interface ContactFormData {
   name: string;
@@ -24,6 +25,7 @@ export function useContactForm() {
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validateField = (field: keyof ContactFormData, value: string): string | undefined => {
     switch (field) {
@@ -48,6 +50,7 @@ export function useContactForm() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: undefined }));
+    setSubmitError(null);
   }, []);
 
   const handleBlur = useCallback(
@@ -61,7 +64,7 @@ export function useContactForm() {
   );
 
   const handleSubmit = useCallback(
-    (e: FormEvent) => {
+    async (e: FormEvent) => {
       e.preventDefault();
 
       const newErrors: ContactFormErrors = {
@@ -78,12 +81,12 @@ export function useContactForm() {
       }
 
       setIsSubmitting(true);
+      setSubmitError(null);
 
-      // Simulate network dispatch
-      setTimeout(() => {
-        setIsSubmitting(false);
+      try {
+        await contactService.sendMessage(formData);
+
         setIsSubmitted(true);
-
         confetti({
           particleCount: 80,
           spread: 100,
@@ -94,13 +97,22 @@ export function useContactForm() {
         setFormData({ name: '', email: '', message: '' });
         setErrors({});
         setTouched({});
-      }, 1000);
+      } catch (err: unknown) {
+        const errorMsg =
+          err instanceof Error
+            ? err.message
+            : 'Unable to deliver message right now. Please email directly at anshgour759@gmail.com.';
+        setSubmitError(errorMsg);
+      } finally {
+        setIsSubmitting(false);
+      }
     },
     [formData]
   );
 
   const resetForm = useCallback(() => {
     setIsSubmitted(false);
+    setSubmitError(null);
   }, []);
 
   return {
@@ -109,10 +121,10 @@ export function useContactForm() {
     touched,
     isSubmitting,
     isSubmitted,
+    submitError,
     handleChange,
     handleBlur,
     handleSubmit,
     resetForm,
   };
 }
-

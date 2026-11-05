@@ -22,6 +22,7 @@ export const ContactSection: React.FC = () => {
     touched,
     isSubmitting,
     isSubmitted,
+    submitError,
     handleChange,
     handleBlur,
     handleSubmit,
@@ -151,7 +152,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <h4 className="text-xl font-bold text-white">Transmission Successful</h4>
                 <p className="text-sm text-slate-300 max-w-sm mx-auto">
-                  Thank you for reaching out. Your message has been logged, and I will reply within 24 hours.
+                  Thank you for reaching out. Your transmission has been dispatched directly to my inbox, and I will reply within 24 hours.
                 </p>
                 <button
                   type="button"
@@ -250,6 +251,12 @@ export const ContactSection: React.FC = () => {
                     </p>
                   )}
                 </div>
+
+                {submitError && (
+                  <div role="alert" className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-mono">
+                    {submitError}
+                  </div>
+                )}
 
                 <button
                   type="submit"
