@@ -8,7 +8,6 @@ export const CustomCursor: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if device supports fine hover (desktop)
     const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
     if (isTouchDevice) return;
 
@@ -17,7 +16,6 @@ export const CustomCursor: React.FC = () => {
     const onMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
 
-      // Check if target is clickable
       const target = e.target as HTMLElement | null;
       if (target) {
         const isClickable = Boolean(
@@ -47,8 +45,7 @@ export const CustomCursor: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    <>
-      {/* Tiny center point */}
+    <div aria-hidden="true" className="pointer-events-none">
       <motion.div
         className="fixed top-0 left-0 w-2 h-2 bg-cyber-cyan rounded-full pointer-events-none z-50 mix-blend-screen"
         animate={{
@@ -64,7 +61,6 @@ export const CustomCursor: React.FC = () => {
         }}
       />
 
-      {/* Trailing smooth luminous ring */}
       <motion.div
         className="fixed top-0 left-0 rounded-full pointer-events-none z-50 border border-cyber-cyan/40 bg-cyber-cyan/5 backdrop-blur-[1px]"
         animate={{
@@ -82,7 +78,7 @@ export const CustomCursor: React.FC = () => {
           mass: 0.2,
         }}
       />
-    </>
+    </div>
   );
 };
 

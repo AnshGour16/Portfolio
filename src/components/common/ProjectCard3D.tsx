@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, ArrowUpRight, Cpu } from 'lucide-react';
-import { Project } from '../types';
-import { sound } from '../utils/sound';
+import { Cpu, Github, BoxArrowUpRight, ChevronRight } from 'react-bootstrap-icons';
+import { Project } from '../../types';
 
 interface ProjectCard3DProps {
   project: Project;
@@ -24,7 +23,7 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotX = ((y - centerY) / centerY) * -7; // max 7 deg
+    const rotX = ((y - centerY) / centerY) * -7;
     const rotY = ((x - centerX) / centerX) * 7;
 
     setRotateX(rotX);
@@ -37,10 +36,6 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
     });
   };
 
-  const handleMouseEnter = () => {
-    sound.playHover();
-  };
-
   const handleMouseLeave = () => {
     setRotateX(0);
     setRotateY(0);
@@ -48,14 +43,13 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
   };
 
   return (
-    <div
+    <article
       style={{ perspective: 1200 }}
       className="w-full h-full"
     >
       <motion.div
         ref={cardRef}
         onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         animate={{
           rotateX,
@@ -63,24 +57,25 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
           transformStyle: 'preserve-3d',
         }}
         transition={{ type: 'spring', damping: 20, stiffness: 200, mass: 0.1 }}
-        className="relative group rounded-2xl glass-panel p-6 sm:p-7 flex flex-col justify-between h-full border border-white/10 hover:border-cyber-cyan/40 transition-colors duration-300 overflow-hidden cursor-default"
+        className="relative group rounded-2xl glass-panel p-6 sm:p-7 flex flex-col justify-between h-full border border-white/10 hover:border-cyber-cyan/40 transition-colors duration-300 overflow-hidden"
       >
-        {/* Dynamic Specular Glare Overlay */}
+        {/* Dynamic Specular Glare */}
         <div
           className="absolute inset-0 pointer-events-none transition-opacity duration-300 rounded-2xl"
           style={{
             background: `radial-gradient(circle at ${glarePos.x}% ${glarePos.y}%, rgba(0, 240, 255, ${glarePos.opacity}), transparent 60%)`,
           }}
+          aria-hidden="true"
         />
 
         {/* Ambient Top Glow Border */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyber-cyan/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyber-cyan/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
 
         <div>
-          {/* Header & Category Badge */}
+          {/* Category Badge & Links */}
           <div className="flex items-center justify-between gap-2 mb-4">
             <span className="text-xs font-mono tracking-wider uppercase px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-cyan-400/90 flex items-center gap-1.5">
-              <Cpu className="w-3.5 h-3.5 text-cyber-cyan" />
+              <Cpu className="w-3.5 h-3.5 text-cyber-cyan" aria-hidden="true" />
               {project.category}
             </span>
 
@@ -90,11 +85,10 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => sound.playClick()}
-                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
-                  title="View GitHub Repository"
+                  aria-label={`${project.title} GitHub repository`}
+                  className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-4 h-4" aria-hidden="true" />
                 </a>
               )}
               {project.liveUrl && (
@@ -102,11 +96,10 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => sound.playClick()}
-                  className="p-1.5 rounded-lg text-slate-400 hover:text-cyber-cyan hover:bg-cyber-cyan/10 transition-colors"
-                  title="Live Demo"
+                  aria-label={`${project.title} live demo`}
+                  className="p-2 rounded-lg text-slate-400 hover:text-cyber-cyan hover:bg-cyber-cyan/10 transition-colors focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <BoxArrowUpRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               )}
             </div>
@@ -120,7 +113,7 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
             {project.description}
           </p>
 
-          {/* Key Metrics Grid */}
+          {/* Key Metrics */}
           <div className="grid grid-cols-3 gap-2 py-3 px-3.5 mb-5 rounded-xl bg-white/[0.02] border border-white/5">
             {project.metrics.map((metric, i) => (
               <div key={i} className="text-center">
@@ -132,7 +125,7 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
             ))}
           </div>
 
-          {/* Tech Stack Pills */}
+          {/* Tech Stack Tags */}
           <div className="flex flex-wrap gap-1.5 mb-6">
             {project.technologies.slice(0, 5).map((tech, i) => (
               <span
@@ -152,17 +145,16 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
 
         {/* Action Button */}
         <button
-          onClick={() => {
-            sound.playClick();
-            onOpenDetails(project);
-          }}
-          className="w-full mt-2 py-2.5 px-4 rounded-xl text-xs font-semibold tracking-wide font-mono uppercase bg-white/[0.04] hover:bg-cyber-cyan/15 text-slate-200 hover:text-cyber-cyan border border-white/10 hover:border-cyber-cyan/40 transition-all flex items-center justify-center gap-2 group/btn"
+          type="button"
+          onClick={() => onOpenDetails(project)}
+          data-agent-action={`view-${project.id}`}
+          className="w-full mt-2 py-3 px-4 rounded-xl text-xs font-semibold tracking-wide font-mono uppercase bg-white/[0.04] hover:bg-cyber-cyan/15 text-slate-200 hover:text-cyber-cyan border border-white/10 hover:border-cyber-cyan/40 transition-all flex items-center justify-center gap-2 group/btn focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none min-h-[44px]"
         >
           <span>System Architecture & Details</span>
-          <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+          <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" aria-hidden="true" />
         </button>
       </motion.div>
-    </div>
+    </article>
   );
 };
 

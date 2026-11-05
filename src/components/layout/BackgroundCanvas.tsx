@@ -22,7 +22,6 @@ export const BackgroundCanvas: React.FC = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // Mouse coordinates
     const mouse = {
       x: -1000,
       y: -1000,
@@ -42,7 +41,6 @@ export const BackgroundCanvas: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
 
-    // Particles setup
     const particleCount = Math.min(Math.floor((width * height) / 14000), 85);
     const particles: {
       x: number;
@@ -55,9 +53,9 @@ export const BackgroundCanvas: React.FC = () => {
     }[] = [];
 
     const colors = [
-      'rgba(0, 240, 255,', // Cyan
-      'rgba(139, 92, 246,', // Violet
-      'rgba(255, 255, 255,', // Silver
+      'rgba(0, 240, 255,',
+      'rgba(139, 92, 246,',
+      'rgba(255, 255, 255,',
     ];
 
     for (let i = 0; i < particleCount; i++) {
@@ -72,25 +70,20 @@ export const BackgroundCanvas: React.FC = () => {
       });
     }
 
-    // Animation Loop
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Render & update particles
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
-        // Move
         p.x += p.vx;
         p.y += p.vy;
 
-        // Wrap edges
         if (p.x < 0) p.x = width;
         else if (p.x > width) p.x = 0;
         if (p.y < 0) p.y = height;
         else if (p.y > height) p.y = 0;
 
-        // Mouse attraction/repulsion
         const dx = mouse.x - p.x;
         const dy = mouse.y - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -101,13 +94,11 @@ export const BackgroundCanvas: React.FC = () => {
           p.y -= (dy / dist) * force * 1.5;
         }
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `${p.color} ${p.alpha})`;
         ctx.fill();
 
-        // Connect nearby particles with subtle filament
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const pdist = Math.hypot(p.x - p2.x, p.y - p2.y);
@@ -137,16 +128,11 @@ export const BackgroundCanvas: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* Aurora Ambient Glow Blobs */}
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
       <div className="absolute -top-[20%] -left-[10%] w-[650px] h-[650px] rounded-full bg-cyber-violet/10 blur-[140px] pointer-events-none animate-pulse-glow" />
       <div className="absolute top-[35%] -right-[15%] w-[600px] h-[600px] rounded-full bg-cyber-cyan/10 blur-[150px] pointer-events-none animate-pulse-glow" style={{ animationDelay: '2s' }} />
       <div className="absolute -bottom-[10%] left-[20%] w-[700px] h-[700px] rounded-full bg-blue-900/10 blur-[160px] pointer-events-none" />
-
-      {/* Grid Pattern overlay */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
-
-      {/* Interactive Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 block w-full h-full opacity-70" />
     </div>
   );
