@@ -1,25 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Terminal, Send, Sparkles } from 'lucide-react';
+import { ArrowDown, Send, Sparkles } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { sound } from '../utils/sound';
 
-interface HeroProps {
-  onOpenTerminal: () => void;
-}
-
-export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
+export const Hero: React.FC = () => {
   return (
-    <section className="pt-36 sm:pt-44 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col relative z-10">
+    <section className="pt-36 sm:pt-44 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        {/* Left Column: Narrative & Actions */}
+        {/* Left Column: Name, Role & Statement */}
         <div className="lg:col-span-7 flex flex-col items-start">
           {/* Availability Status Badge */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-6 shadow-glow-cyan"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-5 shadow-glow-cyan"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -38,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-none">
               {portfolioData.name}
             </h1>
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold gradient-accent mt-2 tracking-tight">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold gradient-accent mt-2.5 tracking-tight">
               {portfolioData.title}
             </div>
           </motion.div>
@@ -48,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed"
+            className="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed mb-8"
           >
             {portfolioData.headline}
           </motion.p>
@@ -58,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap items-center gap-3.5 mt-8"
+            className="flex flex-wrap items-center gap-4"
           >
             {/* Primary CTA */}
             <a
@@ -70,26 +66,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
               <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
             </a>
 
-            {/* Terminal Button */}
-            <button
-              onClick={() => {
-                sound.playClick();
-                onOpenTerminal();
-              }}
-              className="px-5 py-3 rounded-2xl glass-panel border border-white/10 hover:border-cyber-cyan/40 text-slate-200 hover:text-white font-mono text-sm tracking-wide transition-all duration-300 flex items-center gap-2"
-            >
-              <Terminal className="w-4 h-4 text-cyber-cyan" />
-              <span>Launch Shell</span>
-            </button>
-
-            {/* Contact CTA */}
+            {/* Secondary CTA */}
             <a
               href="#contact"
               onClick={() => sound.playClick()}
-              className="px-5 py-3 rounded-2xl text-slate-400 hover:text-white text-sm font-sans transition-colors flex items-center gap-1.5"
+              className="px-6 py-3 rounded-2xl glass-panel border border-white/10 hover:border-cyber-cyan/40 text-slate-200 hover:text-white text-sm font-sans font-medium transition-all duration-300 flex items-center gap-2 group"
             >
               <span>Get in Touch</span>
-              <Send className="w-3.5 h-3.5" />
+              <Send className="w-3.5 h-3.5 text-cyber-cyan transition-transform group-hover:translate-x-0.5" />
             </a>
           </motion.div>
         </div>
@@ -106,7 +90,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
 
           {/* Photograph Container Frame */}
           <div className="relative w-full max-w-sm rounded-3xl p-2.5 glass-panel border border-white/15 shadow-2xl overflow-hidden group">
-            {/* Image */}
             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-obsidian-900">
               <img
                 src={portfolioData.photoUrl || '/ansh-photo.jpg'}
@@ -131,7 +114,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
                     <Sparkles className="w-3.5 h-3.5 text-cyber-cyan" />
                   </div>
                   <div className="text-[11px] font-mono text-cyan-400/90">
-                    Full-Stack & Systems Engineer
+                    Full Stack Developer
                   </div>
                 </div>
                 <div className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300">
@@ -148,7 +131,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4 }}
-        className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16 pt-8 border-t border-white/10"
+        className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-14 pt-8 border-t border-white/10"
       >
         {portfolioData.stats.map((stat, i) => (
           <div key={i} className="glass-panel p-5 rounded-2xl border border-white/5 hover:border-white/15 transition-all">
