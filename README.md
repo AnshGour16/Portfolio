@@ -1,72 +1,129 @@
-# ⚡ Classy & Interactive Engineering Portfolio
+# ✨ Ansh Gour — Full Stack Developer Portfolio
 
-A luxury, high-performance, dark-mode portfolio engineered for modern Full-Stack & Systems Engineers. Built with **React 18**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.x-black?logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
----
-
-## ✨ Features & Interactivity
-
-- **Interactive 60fps Star & Particle Canvas**: Subtle interactive dust and filament particle network responding dynamically to cursor position.
-- **Magnetic Custom Cursor**: Smooth luminous cursor follower that tracks, scales, and pulses over interactive elements.
-- **3D Tilt Cards with Dynamic Glare**: Realistic physics-based specular sheen reflecting light angles across project showcases.
-- **Global Command Palette (`⌘K` / `Ctrl+K`)**: Keyboard-first fuzzy search navigation to jump sections, copy email, toggle audio, and launch tools.
-- **Interactive In-Browser Shell Terminal**: Built-in CLI with commands (`neofetch`, `skills`, `projects`, `about`, `contact`, `matrix`, `clear`).
-- **Web Audio Sound Effects**: Subtle, clean synthesized sound FX (mechanical clicks, micro-ticks, and harmonic success chimes) with a one-click mute toggle.
-- **System Architecture Deep-Dives**: Detailed case study modals featuring benchmarks, architecture breakdowns, and tech stacks.
-- **Interactive Competency Matrix**: Domain-categorized skill bars with animated progress and highlights.
-- **Direct Handshake with Confetti Celebration**: Copy-to-clipboard email with instant toast, confetti particles, and interactive message dispatch form.
+A high-performance, classy personal portfolio engineered for **Ansh Gour** — Full Stack Developer and Computer Science Engineer. Built with an **Obsidian Luxury** aesthetic, glassmorphism design language, 60fps canvas particles, and 3D interactive elements.
 
 ---
 
-## 🛠️ Tech Stack
+## 🌟 Key Highlights & Features
 
-- **Framework**: [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Audio Engine**: Native Web Audio API (zero audio file dependencies)
-- **Effects**: [canvas-confetti](https://www.npmjs.com/package/canvas-confetti)
+- **Personal Hero Showcase**: Two-column responsive hero featuring personal portrait frame, availability status badge, and clear value proposition.
+- **60 FPS Interactive Particle Canvas**: Custom WebGL/HTML5 canvas with responsive celestial dust and particle filaments reacting smoothly to pointer movement.
+- **Magnetic Custom Cursor**: Smooth luminous dual-ring follower with cyan glow that dynamically tracks and scales over clickable triggers.
+- **3D Physics Tilt Cards**: Dynamic 3D card tilt (`perspective: 1200px`) with realistic specular sheen moving across the glass face based on cursor angle.
+- **System Architecture Deep-Dives**: Interactive case study modals detailing engineering approaches, architecture decisions, and technology stacks.
+- **Clean Competency Matrix**: Category-driven skills showcase without arbitrary percentages, presenting practical proficiencies cleanly.
+- **Experience, Education & Leadership Hub**: Tabbed milestone switcher detailing internship achievements at **ESSMEY Private Limited**, engineering education at **Chitkara University**, and leadership in the **IEEE Student Chapter**.
+- **Interactive Connect Handshake**: One-click email copy with instant visual feedback and celebratory particle confetti, alongside direct verified profiles.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Featured Engineering Projects
 
-1. **Install dependencies**:
+1. **[Full-Stack Authentication & OTP Reset System](https://github.com/AnshGour16/Authentication-System)**
+   - Secure production-ready auth engine with 3-step OTP recovery, direct SSL SMTP delivery, Helmet HTTP hardening, multi-tier rate limiting, and an automated 38-test TDD suite in Jest & Supertest.
+   - *Stack: Node.js, Express.js, MongoDB Atlas, JWT, Bcrypt, Jest, Supertest, Tailwind CSS*
+
+2. **[Automated Hackathon Applicant Tracking System (ATS)](https://github.com/AnshGour16/Hackathon-ATS)**
+   - Intelligent judging platform powered by **Google Gemini 1.5 Pro** evaluating pitch decks and GitHub repositories with blind judging mode, automated scoring rubrics, and downloadable PDF report cards.
+   - *Stack: Next.js 14, Google Gemini AI, MongoDB, NextAuth.js, GitHub API, pdf2json, jsPDF, Tailwind CSS*
+
+3. **[API Sentinel: Distributed Monitoring & Observability Platform](https://github.com/AnshGour16/api-sentinel)**
+   - Full-stack API observability system featuring autonomous scheduled probing via Redis-locked BullMQ worker queues, real-time bi-directional telemetry over WebSockets (Socket.IO), and 77 passing Vitest tests.
+   - *Stack: React 19, TypeScript, Node.js, Express, PostgreSQL, Redis, BullMQ, Socket.IO, Vite, Tailwind CSS*
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+- **Frontend**: React 18, TypeScript, Tailwind CSS, Framer Motion, Lucide Icons
+- **Effects & Canvas**: HTML5 Canvas 60fps Particle Engine, Canvas Confetti
+- **Build & Bundler**: Vite 5 with Hot Module Replacement (HMR)
+- **Deployment Ready**: Optimized for Vercel, Netlify, and Cloudflare Pages
+
+---
+
+## 💻 Local Development Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/AnshGour16/Portfolio.git
+   cd Portfolio
+   ```
+
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-2. **Start development server**:
+3. **Start the local development server**:
    ```bash
    npm run dev
    ```
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-3. **Build for production**:
+4. **Build production bundle**:
    ```bash
    npm run build
    ```
 
----
-
-## 🎨 How to Personalize Your Details
-
-All personal content, projects, experience, and contact information is organized in a single configuration file:
-👉 **`src/data/portfolioData.ts`**
-
-Edit this file to update:
-- Your name, title, bio, and social links
-- Your projects, metrics, and architecture points
-- Your skill proficiencies and categories
-- Your work history and milestones
+5. **Preview production build locally**:
+   ```bash
+   npm run preview
+   ```
 
 ---
 
-## 🌐 Deployment
+## 📁 Project Structure
 
-You can deploy this portfolio in seconds with zero configuration to:
-- **Vercel**: Import the GitHub repository and click Deploy.
-- **Netlify**: Run `npm run build` with publish directory `dist`.
-- **GitHub Pages**: Build with Vite and push to the `gh-pages` branch.
+```
+Portfolio/
+├── public/
+│   └── ansh-photo.jpg              # High-resolution portrait photograph
+├── src/
+│   ├── components/
+│   │   ├── AboutSection.tsx        # Engineering values & live IST time clock
+│   │   ├── BackgroundCanvas.tsx    # Interactive 60fps particle canvas
+│   │   ├── ContactSection.tsx      # Direct contact channels, copy email & confetti
+│   │   ├── CustomCursor.tsx        # Magnetic cursor follower
+│   │   ├── ExperienceSection.tsx   # Experience, Education & Leadership tab switcher
+│   │   ├── Footer.tsx              # Clean footer with system status
+│   │   ├── Hero.tsx                # Hero section with photo frame & headline
+│   │   ├── Navbar.tsx              # Floating frosted-glass navigation bar
+│   │   ├── ProjectCard3D.tsx       # 3D tilt project card with specular glare
+│   │   ├── ProjectModal.tsx        # Architecture case study modal
+│   │   ├── ProjectsSection.tsx     # Filterable project showcase grid
+│   │   └── SkillsSection.tsx       # Category-driven technical competencies
+│   ├── data/
+│   │   └── portfolioData.ts        # Centralized configuration & portfolio content
+│   ├── types.ts                    # TypeScript data models and interfaces
+│   ├── utils/
+│   │   └── sound.ts                # Audio engine configuration
+│   ├── App.tsx                     # Main application layout wrapper
+│   ├── index.css                   # Tailwind base directives & glassmorphism utilities
+│   └── main.tsx                    # React application entry point
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+└── vite.config.ts
+```
 
+---
+
+## 📬 Contact & Connect
+
+- **Name**: Ansh Gour
+- **Role**: Full Stack Developer
+- **Email**: [anshgour759@gmail.com](mailto:anshgour759@gmail.com)
+- **GitHub**: [@AnshGour16](https://github.com/AnshGour16)
+- **LinkedIn**: [ansh-gour-03a941306](https://www.linkedin.com/in/ansh-gour-03a941306/)
+- **Location**: Patiala, Punjab, India
+
+---
+
+© 2026 Ansh Gour. Engineered with React, TypeScript & Tailwind CSS.
