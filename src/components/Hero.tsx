@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Send, Sparkles } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import { sound } from '../utils/sound';
 
 export const Hero: React.FC = () => {
   return (
@@ -59,7 +58,6 @@ export const Hero: React.FC = () => {
             {/* Primary CTA */}
             <a
               href="#projects"
-              onClick={() => sound.playClick()}
               className="px-6 py-3 rounded-2xl bg-white text-obsidian-950 font-bold text-sm tracking-wide font-sans hover:bg-slate-200 transition-all duration-300 shadow-glow-cyan flex items-center gap-2 group"
             >
               <span>Explore Projects</span>
@@ -69,7 +67,6 @@ export const Hero: React.FC = () => {
             {/* Secondary CTA */}
             <a
               href="#contact"
-              onClick={() => sound.playClick()}
               className="px-6 py-3 rounded-2xl glass-panel border border-white/10 hover:border-cyber-cyan/40 text-slate-200 hover:text-white text-sm font-sans font-medium transition-all duration-300 flex items-center gap-2 group"
             >
               <span>Get in Touch</span>
@@ -116,9 +113,6 @@ export const Hero: React.FC = () => {
                   <div className="text-[11px] font-mono text-cyan-400/90">
                     Full Stack Developer
                   </div>
-                </div>
-                <div className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300">
-                  @AnshGour16
                 </div>
               </div>
             </div>
