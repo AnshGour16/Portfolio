@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]"
           >
-            Building modern <span className="gradient-accent">Full-Stack & AI</span> platforms with precision.
+            Engineering scalable <span className="gradient-accent">Full-Stack systems</span> & intelligent AI solutions.
           </motion.h1>
 
           <motion.p

@@ -86,7 +86,7 @@ export const TerminalModal: React.FC<TerminalModalProps> = ({ isOpen, onClose })
               <div className="text-cyber-violet font-bold pb-1 border-b border-white/10">
                 ansh@chitkara-workstation
               </div>
-              <div><span className="text-cyber-cyan">Education:</span> B.E. Computer Science (CGPA: 7.7)</div>
+              <div><span className="text-cyber-cyan">Education:</span> B.E. Computer Science • Chitkara University</div>
               <div><span className="text-cyber-cyan">LeetCode:</span> 225+ Problems Solved</div>
               <div><span className="text-cyber-cyan">Experience:</span> Full Stack Intern @ ESSMEY Pvt Ltd</div>
               <div><span className="text-cyber-cyan">Stack:</span> MERN • Next.js • Gemini API • C++</div>
