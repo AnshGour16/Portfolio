@@ -116,9 +116,9 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, onOpenDet
           {/* Key Metrics */}
           <div className="grid grid-cols-3 gap-2 py-3 px-3.5 mb-5 rounded-xl bg-white/[0.02] border border-white/5">
             {project.metrics.map((metric, i) => (
-              <div key={i} className="text-center">
-                <div className="text-xs text-slate-400 font-mono mb-0.5">{metric.label}</div>
-                <div className="text-sm font-semibold text-slate-100 font-mono tracking-tight text-glow">
+              <div key={i} className="text-center overflow-hidden">
+                <div className="text-[11px] sm:text-xs text-slate-400 font-mono mb-0.5 truncate">{metric.label}</div>
+                <div className="text-xs sm:text-sm font-semibold text-slate-100 font-mono tracking-tight text-glow truncate">
                   {metric.value}
                 </div>
               </div>

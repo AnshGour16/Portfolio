@@ -51,20 +51,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.94, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl glass-panel p-6 sm:p-8 border border-white/15 shadow-2xl z-10"
+          className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl sm:rounded-3xl glass-panel p-4 sm:p-8 border border-white/15 shadow-2xl z-10"
         >
           {/* Close Button */}
           <button
             type="button"
             onClick={onClose}
             aria-label="Close project modal"
-            className="absolute top-5 right-5 p-2.5 rounded-xl text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/5 transition-colors focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-xl text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/5 transition-colors focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center"
           >
             <X className="w-5 h-5" aria-hidden="true" />
           </button>
 
           {/* Header */}
-          <div className="mb-6">
+          <div className="mb-6 pr-10 sm:pr-0">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xs font-mono font-medium uppercase px-3 py-1 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan flex items-center gap-1.5">
                 <Cpu className="w-3.5 h-3.5" aria-hidden="true" />
@@ -80,9 +80,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Highlights */}
-          <div className="grid grid-cols-3 gap-3 p-4 mb-6 rounded-2xl bg-white/[0.03] border border-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 mb-6 rounded-2xl bg-white/[0.03] border border-white/10">
             {project.metrics.map((m, i) => (
-              <div key={i} className="text-center">
+              <div key={i} className="text-center p-2 rounded-xl bg-white/[0.01]">
                 <div className="text-xs font-mono text-slate-400 mb-1">{m.label}</div>
                 <div className="text-base sm:text-xl font-bold font-mono text-cyber-cyan">
                   {m.value}
@@ -141,8 +141,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Action Links */}
-          <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
+          <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-3">
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}
@@ -170,7 +170,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <button
               type="button"
               onClick={onClose}
-              className="text-xs font-mono text-slate-400 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none px-2 py-1 rounded"
+              className="text-xs font-mono text-slate-400 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none px-2 py-1 rounded self-end sm:self-auto"
             >
               Close Window (Esc)
             </button>

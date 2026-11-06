@@ -64,7 +64,7 @@ export const SkillsSection: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         role="tabpanel"
-        className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 max-w-4xl mx-auto"
+        className="glass-panel p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 max-w-4xl mx-auto"
       >
         <div className="mb-6 pb-6 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>

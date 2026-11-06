@@ -87,13 +87,13 @@ export const ExperienceSection: React.FC = () => {
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.3 }}
             role="tabpanel"
-            className="relative border-l border-white/10 ml-4 sm:ml-8 space-y-10"
+            className="relative border-l border-white/10 ml-2.5 sm:ml-8 space-y-8 sm:space-y-10"
           >
             {experiences.map((exp, idx) => (
-              <div key={idx} className="relative pl-6 sm:pl-10 group">
+              <div key={idx} className="relative pl-4 sm:pl-10 group">
                 <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian-950 border-2 border-cyber-cyan group-hover:scale-125 group-hover:bg-cyber-cyan transition-all duration-300 shadow-glow-cyan" aria-hidden="true" />
 
-                <div className="glass-panel p-6 sm:p-7 rounded-2xl border border-white/10 group-hover:border-cyber-cyan/30 transition-all duration-300">
+                <div className="glass-panel p-4 sm:p-7 rounded-2xl border border-white/10 group-hover:border-cyber-cyan/30 transition-all duration-300">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                     <div>
                       <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyber-cyan transition-colors">

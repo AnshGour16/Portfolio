@@ -1,11 +1,9 @@
 import React from 'react';
-import { LightningCharge, ShieldCheck, Stars, Globe, Clock } from 'react-bootstrap-icons';
+import { LightningCharge, ShieldCheck, Stars, Globe } from 'react-bootstrap-icons';
 import { portfolioService } from '../../services/portfolioService';
-import { useCurrentTime } from '../../hooks/useCurrentTime';
 
 export const AboutSection: React.FC = () => {
   const data = portfolioService.getPortfolioData();
-  const currentTime = useCurrentTime('Asia/Kolkata');
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -19,8 +17,8 @@ export const AboutSection: React.FC = () => {
   };
 
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="about" aria-labelledby="about-heading" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Left Column: Narrative */}
         <div className="lg:col-span-7 space-y-6">
           <div>
@@ -38,15 +36,11 @@ export const AboutSection: React.FC = () => {
             ))}
           </div>
 
-          {/* Timezone / Location status card */}
-          <div className="flex flex-wrap items-center gap-4 pt-4">
+          {/* Location badge */}
+          <div className="flex flex-wrap items-center gap-4 pt-2">
             <div className="glass-panel px-4 py-2.5 rounded-xl border border-white/10 flex items-center gap-2.5 text-xs font-mono text-slate-300">
               <Globe className="w-4 h-4 text-cyber-cyan" aria-hidden="true" />
               <span>{data.location}</span>
-            </div>
-            <div className="glass-panel px-4 py-2.5 rounded-xl border border-white/10 flex items-center gap-2.5 text-xs font-mono text-slate-300">
-              <Clock className="w-4 h-4 text-amber-400" aria-hidden="true" />
-              <span>{currentTime ? `${currentTime} IST` : 'Synchronizing...'}</span>
             </div>
           </div>
         </div>
@@ -56,7 +50,7 @@ export const AboutSection: React.FC = () => {
           {data.about.coreValues.map((val, idx) => (
             <div
               key={idx}
-              className="glass-panel p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 group"
+              className="glass-panel p-5 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 group"
             >
               <div className="flex items-center gap-3 mb-2.5">
                 <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform">
@@ -76,4 +70,3 @@ export const AboutSection: React.FC = () => {
     </section>
   );
 };
-

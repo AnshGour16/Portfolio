@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
             <a
               href="#projects"
               data-agent-action="explore-projects"
-              className="px-6 py-3.5 rounded-2xl bg-white text-obsidian-950 font-bold text-sm tracking-wide font-sans hover:bg-slate-200 transition-all duration-300 shadow-glow-cyan flex items-center gap-2 group focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none min-h-[44px]"
+              className="px-6 py-3.5 rounded-2xl bg-white text-obsidian-950 font-bold text-sm tracking-wide font-sans hover:bg-slate-200 transition-all duration-300 shadow-glow-cyan flex items-center justify-center gap-2 group focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none min-h-[44px] w-full sm:w-auto"
             >
               <span>Explore Projects</span>
               <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
             <a
               href="#contact"
               data-agent-action="contact-me"
-              className="px-6 py-3.5 rounded-2xl glass-panel border border-white/10 hover:border-cyber-cyan/40 text-slate-200 hover:text-white text-sm font-sans font-medium transition-all duration-300 flex items-center gap-2 group focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none min-h-[44px]"
+              className="px-6 py-3.5 rounded-2xl glass-panel border border-white/10 hover:border-cyber-cyan/40 text-slate-200 hover:text-white text-sm font-sans font-medium transition-all duration-300 flex items-center justify-center gap-2 group focus-visible:ring-2 focus-visible:ring-cyber-cyan focus-visible:outline-none min-h-[44px] w-full sm:w-auto"
             >
               <span>Get in Touch</span>
               <Send className="w-3.5 h-3.5 text-cyber-cyan transition-transform group-hover:translate-x-0.5" aria-hidden="true" />

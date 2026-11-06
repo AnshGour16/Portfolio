@@ -139,7 +139,7 @@ export const ContactSection: React.FC = () => {
 
         {/* Right Column: Accessible Message Form */}
         <div className="lg:col-span-7">
-          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl relative">
+          <div className="glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl relative">
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <ChatSquareText className="w-5 h-5 text-cyber-cyan" aria-hidden="true" />
               Transmit Message
