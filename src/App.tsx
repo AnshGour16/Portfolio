@@ -1,6 +1,4 @@
 import React from 'react';
-import { BackgroundCanvas } from './components/layout/BackgroundCanvas';
-import { CustomCursor } from './components/layout/CustomCursor';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/features/Hero';
@@ -13,13 +11,7 @@ import { ContactSection } from './components/features/ContactSection';
 export const App: React.FC = () => {
   return (
     <div className="relative min-h-screen selection:bg-cyber-cyan/30 selection:text-cyber-cyan font-sans bg-obsidian-950 text-slate-100">
-      {/* Interactive 60fps Star & Dust Canvas */}
-      <BackgroundCanvas />
-
-      {/* Magnetic Cursor Ring */}
-      <CustomCursor />
-
-      {/* Floating Island Navigation */}
+      {/* Navigation */}
       <Navbar />
 
       {/* Main Sections */}

@@ -1,35 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Send, Stars } from 'react-bootstrap-icons';
+import { ArrowDown, Send } from 'react-bootstrap-icons';
 import { portfolioService } from '../../services/portfolioService';
 
 export const Hero: React.FC = () => {
   const data = portfolioService.getPortfolioData();
 
   return (
-    <section aria-labelledby="hero-name" className="pt-36 sm:pt-44 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col relative z-10">
+    <section aria-labelledby="hero-name" className="pt-32 sm:pt-40 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         {/* Left Column: Name, Role & Statement */}
         <div className="lg:col-span-7 flex flex-col items-start">
-          {/* Availability Status Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-5 shadow-glow-cyan"
-          >
-            <span className="relative flex h-2 w-2" aria-hidden="true">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span>{data.status}</span>
-          </motion.div>
-
           {/* Main Name & Role */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6 }}
             className="mb-4"
           >
             <h1 id="hero-name" className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-none">
@@ -44,7 +30,7 @@ export const Hero: React.FC = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed mb-8"
           >
             {data.headline}
@@ -81,38 +67,28 @@ export const Hero: React.FC = () => {
 
         {/* Right Column: Photograph Frame */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92, y: 20 }}
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
           className="lg:col-span-5 relative flex justify-center lg:justify-end"
         >
-          {/* Ambient Glow */}
-          <div className="absolute -inset-4 bg-gradient-to-tr from-cyber-cyan/20 via-cyber-violet/20 to-pink-500/10 rounded-3xl blur-2xl opacity-70 animate-pulse-glow pointer-events-none" aria-hidden="true" />
-
           {/* Photograph Card */}
           <div className="relative w-full max-w-sm rounded-3xl p-2.5 glass-panel border border-white/15 shadow-2xl overflow-hidden group">
             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-obsidian-900">
               <img
                 src={data.photoUrl || '/ansh-photo.jpg'}
-                alt={`${data.name} presenting at Chitkara University`}
+                alt={data.name}
                 className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
               />
 
               {/* Edge Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-transparent to-black/20 pointer-events-none" aria-hidden="true" />
 
-              {/* Top Status Pill */}
-              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-obsidian-950/70 backdrop-blur-md border border-white/10 text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
-                <span>Chitkara University</span>
-              </div>
-
               {/* Bottom Caption */}
               <div className="absolute bottom-3 left-3 right-3 p-3.5 rounded-xl bg-obsidian-950/85 backdrop-blur-md border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-bold text-white flex items-center gap-1.5">
-                    <span>{data.name}</span>
-                    <Stars className="w-3.5 h-3.5 text-cyber-cyan" aria-hidden="true" />
+                  <div className="text-sm font-bold text-white">
+                    {data.name}
                   </div>
                   <div className="text-[11px] font-mono text-cyan-400/90">
                     {data.title}
@@ -128,7 +104,7 @@ export const Hero: React.FC = () => {
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.4 }}
+        transition={{ duration: 0.7, delay: 0.35 }}
         className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-14 pt-8 border-t border-white/10"
       >
         {data.stats.map((stat, i) => (
@@ -144,4 +120,3 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
-

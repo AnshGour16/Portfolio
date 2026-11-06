@@ -7,20 +7,19 @@
 [![Bootstrap Icons](https://img.shields.io/badge/Bootstrap_Icons-1.11.x-7952B3?logo=bootstrap&logoColor=white)](https://icons.getbootstrap.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.x-black?logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
-A high-performance personal portfolio engineered for **Ansh Gour** — Full Stack Developer and Computer Science Engineer. Built with an Obsidian design aesthetic, glassmorphism design system, 60fps canvas particles, 3D interactive physics cards, strict separation of concerns, and full Agent Experience (AX) compatibility.
+A high-performance personal portfolio engineered for **Ansh Gour** — Full Stack Developer and Computer Science Engineer. Built with a clean Obsidian design aesthetic, glassmorphism design system, 3D interactive physics cards, strict separation of concerns, and full Agent Experience (AX) compatibility.
 
 ---
 
 ## Key Highlights & Features
 
-- **Personal Hero Showcase**: Two-column responsive hero featuring personal portrait frame, live availability status badge, and concise value proposition.
-- **60 FPS Interactive Particle Canvas**: Custom WebGL/HTML5 canvas with responsive celestial dust and particle filaments reacting smoothly to pointer movement.
-- **Magnetic Custom Cursor**: Smooth luminous dual-ring follower with cyan glow that dynamically tracks and scales over clickable triggers.
+- **Personal Hero Showcase**: Two-column responsive hero featuring personal portrait frame, crisp typography, and concise value proposition.
 - **3D Physics Tilt Cards**: Dynamic 3D card tilt (`perspective: 1200px`) with realistic specular sheen moving across the glass face based on cursor angle.
 - **System Architecture Deep-Dives**: Interactive case study modals detailing engineering approaches, architecture decisions, and technology stacks.
 - **Clean Competency Matrix**: Category-driven skills showcase presenting practical proficiencies cleanly without arbitrary percentage bars.
 - **Experience, Education & Leadership Hub**: Tabbed milestone switcher detailing internship achievements at **ESSMEY Private Limited**, engineering education at **Chitkara University**, and leadership in the **IEEE Student Chapter**.
 - **Interactive Connect Handshake**: One-click email and phone copying with instant visual feedback and celebratory particle confetti, alongside direct verified profiles.
+- **Direct Email Transmission**: Web3Forms integration delivering visitor transmissions straight to personal Gmail inbox without backend overhead.
 - **Agent Experience (AX) and Accessibility**: Semantic HTML5 markup, WCAG-compliant 44px+ touch targets, deterministic `data-agent-action` selectors, and Schema.org `Person` JSON-LD structured data.
 
 ---
@@ -103,8 +102,6 @@ Portfolio/
 │   │   │   ├── ProjectsSection.tsx # Filterable project showcase grid
 │   │   │   └── SkillsSection.tsx   # Category-driven technical competencies
 │   │   └── layout/                 # Shell and layout components
-│   │       ├── BackgroundCanvas.tsx# Interactive 60fps particle canvas
-│   │       ├── CustomCursor.tsx    # Magnetic cursor follower
 │   │       ├── Footer.tsx          # Clean footer with system status
 │   │       └── Navbar.tsx          # Floating frosted-glass navigation bar
 │   ├── hooks/                      # Decoupled custom React hooks
